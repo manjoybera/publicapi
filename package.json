@@ -1,0 +1,44 @@
+{
+  "name": "publicapi",
+  "version": "1.0.0",
+  "description": "This is a React Material UI Demo using public APIs",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manjoybera/publicapi.git"
+  },
+  "keywords": [],
+  "author": "Manjoy Bera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manjoybera/publicapi/issues"
+  },
+  "homepage": "https://github.com/manjoybera/publicapi#readme",
+  "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.5",
+    "@mui/icons-material": "^5.5.1",
+    "@mui/material": "^5.5.3",
+    "css-loader": "^6.7.1",
+    "html-webpack-plugin": "^5.5.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "style-loader": "^3.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.4",
+    "react-hot-loader": "^4.13.0",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  }
+}

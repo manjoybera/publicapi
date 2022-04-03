@@ -1,0 +1,43 @@
+# main workflow file
+name: Build
+
+# Trigger this workflow on commit to master
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # Job to build the React Js files
+  codebuild:
+    name: Build Code
+    runs-on: ubuntu-latest
+    environment: production
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+
+      - name: Install and Build
+        run: |
+          npm install
+          npx webpack --mode production
+
+      #- run: npm test
+
+      # Upload the build folder as artifacts 
+      - name: Archive production artifacts
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: build-artifacts
+          path: dist
